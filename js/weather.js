@@ -17,7 +17,7 @@ function search() {
     errorMessage.style.display = "none";
 
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${inputSearch.value}&appid=78b8f392b73647a3a7942b1c1e4b575f`
+      `HTTPS://api.openweathermap.org/data/2.5/weather?q=${inputSearch.value}&appid=78b8f392b73647a3a7942b1c1e4b575f`
     )
       .then((res) => res.json())
       .then((data) => showData(data))
@@ -48,12 +48,6 @@ function showData(data) {
   minTemp.innerText = kelToCel(data.main.temp_min);
   humidity.innerText = data.main.humidity;
   inputSearch.value = "";
-
-  //   else {
-  //     errorMessage.style.display = "block";
-  //     errorMessage.innerText = "Please enter valid a city name!";
-  //     inputSearch.value = "";
-  //   }
 }
 
 const kelToCel = (K) => (parseFloat(K) - 273).toFixed(2);
