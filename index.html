@@ -5,45 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All City Temperature</title>
-    <style>
-      body {
-        background-image: url(images/morning.jpg);
-        background-size: 100%;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-      }
-      #input-search {
-        width: 75%;
-        height: 40px;
-        text-align: center;
-        font-size: large;
-        margin-bottom: 20px;
-        border-radius: 10px;
-      }
-      #btn-search {
-        padding: 10px;
-        background-color: black;
-        color: whitesmoke;
-        border-radius: 10px;
-        font-size: medium;
-      }
-      #show-temp {
-        text-align: center;
-        margin-top: 30px;
-        display: none;
-      }
 
-      #city-name {
-        color: rgb(8, 42, 14);
-      }
-      .dark {
-        color: red;
-      }
-      .details {
-        display: flex;
-        justify-content: space-around;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h2 id="err-msg" style="display: none; color: red"></h2>
@@ -60,8 +23,8 @@
       <h1 id="city-name">City Name</h1>
       <div class="details">
         <div class="left">
-          <h3>Humidity: <span id="humidity" class="dark"></span>%</h3>
           <h3>Feels like: <span id="feels-like" class="dark"></span> °C</h3>
+          <h3>Humidity: <span id="humidity" class="dark"></span>%</h3>
         </div>
         <div>
           <h3>Now: <span id="temp" class="dark"></span> °C</h3>
