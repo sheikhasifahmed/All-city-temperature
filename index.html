@@ -4,25 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API practice</title>
+    <title>All City Temperature</title>
     <style>
-      ul > li {
-        list-style: none;
-        background-color: lightpink;
-        margin: 20px;
+      body {
+        background-image: url(images/morning.jpg);
+        background-size: 100%;
+      }
+      #input-search {
+        width: 50%;
+        height: 40px;
+        text-align: center;
+        font-size: large;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+      #btn-search {
+        padding: 10px;
+        background-color: black;
+        color: whitesmoke;
+        border-radius: 10px;
+        font-size: medium;
+      }
+      #show-temp {
+        text-align: center;
+        margin-top: 30px;
+        display: none;
+      }
+
+      #city-name {
+        color: rgb(8, 42, 14);
+      }
+      .dark {
+        color: red;
+      }
+      .details {
+        display: flex;
+        justify-content: space-around;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1 id="headline">This is the testing API project</h1>
-    </header>
-    <main>
-      <div id="posts">
-        <h3>Here is the post titles. Click the title to see the post.</h3>
-        <ul id="post-titles"></ul>
+    <h2 id="err-msg" style="display: none; color: red"></h2>
+    <div style="text-align: center; margin-top: 80px">
+      <input
+        type="text"
+        placeholder="Search weather by city name"
+        id="input-search"
+      />
+      <br />
+      <button id="btn-search">Search Weather</button>
+    </div>
+    <div id="show-temp">
+      <h1 id="city-name">City Name</h1>
+      <div class="details">
+        <div class="left">
+          <h3>Humidity: <span id="humidity" class="dark"></span>%</h3>
+          <h3>Feels like: <span id="feels-like" class="dark"></span> °C</h3>
+        </div>
+        <div>
+          <h3>Now: <span id="temp" class="dark"></span> °C</h3>
+        </div>
+
+        <div class="right">
+          <h3>Max temp: <span id="max-temp" class="dark"></span> °C</h3>
+          <h3>Min temp: <span id="min-temp" class="dark"></span> °C</h3>
+        </div>
       </div>
-    </main>
-    <script src="js/script.js"></script>
+    </div>
+    <script src="js/weather.js"></script>
   </body>
 </html>
