@@ -21,7 +21,7 @@ function search() {
     )
       .then((res) => res.json())
       .then((data) => showData(data))
-      .catch((error) => {
+      .catch(() => {
         errorMessage.style.display = "block";
         errorMessage.innerText = `No city found by the name you inputed!
         Please enter a valid city name.
@@ -40,8 +40,19 @@ function showData(data) {
   const minTemp = document.getElementById("min-temp");
   const feelsLike = document.getElementById("feels-like");
   const humidity = document.getElementById("humidity");
+  const sunrise = document.getElementById("sunrise");
+  const sunset = document.getElementById("sunset");
+  const status = document.getElementById("status");
+  const icon = document.getElementById("icon");
   console.log(data);
   cityName.innerText = data.name;
+  status.innerText = data.weather[0].main;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+  );
+  sunrise.innerText = unixToLocal(data.sys.sunrise);
+  sunset.innerText = unixToLocal(data.sys.sunset);
   temp.innerText = kelToCel(data.main.temp);
   feelsLike.innerText = kelToCel(data.main.feels_like);
   maxTemp.innerText = kelToCel(data.main.temp_max);
@@ -51,3 +62,13 @@ function showData(data) {
 }
 
 const kelToCel = (K) => (parseFloat(K) - 273).toFixed(2);
+
+function unixToLocal(t) {
+  const miliSeconds = t * 1000;
+  const time = new Date(miliSeconds);
+  const local = time.toLocaleTimeString("en-bd", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  return local;
+}

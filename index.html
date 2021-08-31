@@ -10,7 +10,7 @@
   </head>
   <body>
     <h2 id="err-msg" style="display: none; color: red"></h2>
-    <div style="text-align: center; margin-top: 80px">
+    <div id="search-section">
       <input
         type="text"
         placeholder="Search weather by city"
@@ -20,20 +20,28 @@
       <button id="btn-search">Search Weather</button>
     </div>
     <div id="show-temp">
-      <h1 id="city-name">City Name</h1>
-      <div class="details">
-        <div class="left">
-          <h3>Feels like: <span id="feels-like" class="dark"></span> °C</h3>
-          <h3>Humidity: <span id="humidity" class="dark"></span>%</h3>
+      <div id="sun">
+        <h3>Sunrise: <span id="sunrise"></span></h3>
+        <h3>Sunset: <span id="sunset"></span></h3>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <div id="name-icon">
+          <img
+            id="icon"
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt=""
+          />
+          <h1 id="city-name">City Name</h1>
         </div>
-        <div>
-          <h3>Now: <span id="temp" class="dark"></span> °C</h3>
-        </div>
+      </div>
 
-        <div class="right">
-          <h3>Max temp: <span id="max-temp" class="dark"></span> °C</h3>
-          <h3>Min temp: <span id="min-temp" class="dark"></span> °C</h3>
-        </div>
+      <div class="details">
+        <h3>Now: <span id="temp"></span> °C</h3>
+        <h3 id="status">status</h3>
+        <h3>Feels like: <span id="feels-like"></span> °C</h3>
+        <h3>Humidity: <span id="humidity"></span>%</h3>
+        <h3>Max temp: <span id="max-temp"></span> °C</h3>
+        <h3>Min temp: <span id="min-temp"></span> °C</h3>
       </div>
     </div>
     <script src="js/weather.js"></script>
