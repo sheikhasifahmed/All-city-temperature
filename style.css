@@ -49,9 +49,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  body {
-    /* background-image: url(images/sunset.jpg); */
-  }
   #search-section {
     margin-top: 30px;
   }
