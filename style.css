@@ -25,6 +25,10 @@ body {
   border-radius: 10px;
   font-size: medium;
 }
+#btn-search:hover {
+  background-color: whitesmoke;
+  color: black;
+}
 #show-temp {
   text-align: center;
   margin-top: 30px;
